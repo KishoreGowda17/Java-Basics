@@ -1,4 +1,4 @@
-package assignments;
+// package assignments;
 
 public class intFloatDiv {
     public static void main(String[] args) {
