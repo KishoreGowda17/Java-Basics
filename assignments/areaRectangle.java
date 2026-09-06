@@ -6,6 +6,5 @@ public class areaRectangle {
         int breadth = 20;
 
         System.out.println("Area of Rectangle = "+length*breadth);
-        
     }
 }
