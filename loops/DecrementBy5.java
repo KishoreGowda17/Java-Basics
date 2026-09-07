@@ -1,4 +1,4 @@
-package loops;
+// package loops;
 
 public class DecrementBy5 {
     public static void main(String[] args) {

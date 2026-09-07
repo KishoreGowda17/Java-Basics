@@ -1,4 +1,4 @@
-package loops;
+// package loops;
 
 public class MultiplyTwo {
     public static void main(String[] args) {
