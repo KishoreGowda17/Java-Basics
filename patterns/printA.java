@@ -1,12 +1,17 @@
 package patterns;
 
+import java.util.Scanner;
+
 public class printA {
-public static void main(String[] args) {
-    for (int i = 1; i <= 3; i++) {
-        for(int j=1;j<=3;j++){
-            System.out.print(" A ");
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter n : ");
+        int n = sc.nextInt();
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                System.out.print(" K ");
+            }
+            System.out.println();
         }
-        System.out.println();
     }
-}
 }
