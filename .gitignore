@@ -1,1 +1,4 @@
 .vscode
+cloc
+cloc.pl
+perlcommand.txt
