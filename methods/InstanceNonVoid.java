@@ -19,7 +19,6 @@ public class InstanceNonVoid {
         int num = sc.nextInt();
         boolean result = obj.isEven(num);
         // System.out.println(result);
-        
         if (result == true) {
             System.out.println("Number is even");
         } else {
