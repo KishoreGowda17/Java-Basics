@@ -25,5 +25,6 @@ public class InstanceNonVoid {
         } else {
             System.out.println("Number is odd");
         }
+        //
     }
 }
