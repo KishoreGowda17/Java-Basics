@@ -1,15 +1,17 @@
-package methodAssignments;
+package methods;
 
 import java.util.Scanner;
 
 public class CheckEvenOdd {
 
-    int oddEven(int x) {
+    static void checkOddEven(int x) {
+
         if (x % 2 == 0) {
-            return 1;
+            System.out.println("Number is Even");
         } else {
-            return 0;
+            System.out.println("Number is Odd");
         }
+
     }
     // static int oddEven(int x) {
     // if (x % 2 == 0) {
@@ -24,13 +26,8 @@ public class CheckEvenOdd {
         CheckEvenOdd obj = new CheckEvenOdd();
         System.out.println("Enter a number : ");
         int num = sc.nextInt();
-        int result = obj.oddEven(num);
 
-        if (result == 1) {
-            System.out.println("Number is Even");
-        } else {
-            System.out.println("Number is Odd");
-        }
+        checkOddEven(num);
 
     }
 }
