@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+
 class SinglyLinkedList {
 
     public static void main(String[] args) {
@@ -8,6 +10,9 @@ class SinglyLinkedList {
         head = insertAtStart(202, head);
         head = insertAtStart(303, head);
         head = insertAtStart(404, head);
+        head = insertAtStart(505, head);
+        head = insertAtStart(606, head);
+        head = insertAtStart(707, head);
 
         printList(head);
     }
@@ -24,14 +29,14 @@ class SinglyLinkedList {
 
     public static void printList(Node head) {
 
-        Node monkey = head;
+        Node temp = head;
 
-        while (monkey != null) {
+        while (temp != null) {
 
-            System.out.print(monkey.data);
+            System.out.print(temp.data);
             System.out.print(" -> ");
 
-            monkey = monkey.next;
+            temp = temp.next;
         }
 
         System.out.println("null");
