@@ -3,18 +3,33 @@ import java.util.LinkedList;
 class SinglyLinkedList {
 
     public static void main(String[] args) {
+        // testInsertAtStart();
+        testInsertAtEnd();
+    }
 
+    public static void testInsertAtStart() {
+        Node head = null;
+        // insert At Start
+        head = insertAtStart(101, head);
+        head = insertAtStart(102, head);
+        head = insertAtStart(103, head);
+        head = insertAtStart(104, head);
+        head = insertAtStart(105, head);
+        head = insertAtStart(106, head);
+        printList(head);
+
+    }
+
+    public static void testInsertAtEnd() {
         Node head = null;
 
-        head = insertAtStart(101, head);
-        head = insertAtStart(202, head);
-        head = insertAtStart(303, head);
-        head = insertAtStart(404, head);
-        head = insertAtStart(505, head);
-        head = insertAtStart(606, head);
-        head = insertAtStart(707, head);
+        head = insertAtEnd(200, head);
+        head = insertAtEnd(400, head);
+        head = insertAtEnd(600, head);
+        head = insertAtEnd(800, head);
 
         printList(head);
+
     }
 
     public static Node insertAtStart(int value, Node currentHead) {
@@ -25,6 +40,30 @@ class SinglyLinkedList {
         if (currentHead != null) // one or more nodes exist in the list newNode.next = currentHead;
             newNode.next = currentHead;
         return newNode;
+    }
+
+    public static Node insertAtEnd(int value, Node currentHead) {
+
+        Node lastNode = new Node();
+        lastNode.data = value;
+        lastNode.next = null;
+
+        // Empty list
+        if (currentHead == null) {
+            return lastNode;
+        }
+
+        Node currentLastNode = currentHead;
+
+        // Find the last node
+        while (currentLastNode.next != null) {
+            currentLastNode = currentLastNode.next;
+        }
+
+        // Connect new node to the last node
+        currentLastNode.next = lastNode;
+
+        return currentHead;
     }
 
     public static void printList(Node head) {
