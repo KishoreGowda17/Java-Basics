@@ -67,4 +67,42 @@ public class MyArray {
 
     }
 
+    public void deleteFromEnd() {
+        if (rightIndex == 0) {
+            System.out.println("Array is empty");
+            return;
+        }
+        array[rightIndex - 1] = 0;
+        rightIndex--;
+    }
+
+    public void deleteFromStart() {
+        if (rightIndex == 0) {
+            System.out.println("Array is empty");
+            return;
+        }
+
+        // shift elements from index = 0
+
+        for (int i = 0; i < rightIndex; i++) {
+            array[i] = array[i + 1];
+        }
+        rightIndex--;
+        array[rightIndex] = 0;
+
+    }
+
+    public void deleteFromAnyPosition(int pos) {
+        if (pos < 0 || pos > rightIndex) {
+            System.out.println("Invalid Position");
+            return;
+        }
+
+        for (int i = pos; i < rightIndex; i++) {
+            array[i] = array[i + 1];
+        }
+        rightIndex--;
+        array[rightIndex] = 0;
+    }
+
 }
