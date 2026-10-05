@@ -2,12 +2,10 @@ import java.util.LinkedList;
 
 class SinglyLinkedList {
 
-    public static void main(String[] args) { 
-        // testInsertAtStart();
-        // testInsertAtEnd();
-
-        insertAfterKey(null, 5, 10);
-
+    public static void main(String[] args) {
+        System.out.println();
+        // testDeleteAtStart();
+        testDeleteAtKeyNode();
     }
 
     public static void testInsertAtStart() {
@@ -103,4 +101,119 @@ class SinglyLinkedList {
 
         System.out.println("null");
     }
+
+    public static void testDeleteAtStart() {
+        Node head = null;
+
+        // Empty list
+        head = deleteAtEnd(head);
+
+        // one node
+        System.out.println("before Delete");
+        head = insertAtEnd(10, head);
+        printList(head);
+        System.out.println();
+        System.out.println("After delete");
+        head = deleteAtEnd(head);
+        printList(head);
+        System.out.println();
+
+        // more than 1 node
+        System.out.println("Before delete");
+        head = insertAtEnd(10, head);
+        head = insertAtEnd(20, head);
+        head = insertAtEnd(30, head);
+        head = insertAtEnd(40, head);
+        printList(head);
+        System.out.println();
+
+        System.out.println("After delete");
+        head = deleteAtEnd(head);
+
+        printList(head);
+    }
+
+    public static void testDeleteAtKeyNode() {
+        Node head = null;
+
+        // Empty list
+        head = deleteKeyNode(head, 10);
+
+        // one node
+        System.out.println("before Delete");
+        head = insertAtEnd(10, head);
+        printList(head);
+        System.out.println();
+        System.out.println("After delete");
+        head = deleteKeyNode(head,10);
+        printList(head);
+        System.out.println();
+
+        // more than 1 node
+        System.out.println("Before delete");
+        head = insertAtEnd(10, head);
+        head = insertAtEnd(20, head);
+        head = insertAtEnd(30, head);
+        head = insertAtEnd(40, head);
+        printList(head);
+        System.out.println();
+
+        System.out.println("After delete");
+        head = deleteKeyNode(head,30);
+
+        printList(head);
+    }
+
+    public static Node deleteAtStart(Node head) {
+        // list is empty
+        if (head == null) {
+            System.out.println("List is empty");
+            System.out.println();
+            return null;
+        }
+
+        // one or many nodes in list
+        return head.next;
+    }
+
+    public static Node deleteAtEnd(Node head) {
+        if (head == null || head.next == null) {
+            System.out.println("empty list");
+            return null;
+        }
+        Node lastButOne = head;
+        while (lastButOne.next.next != null) {
+            lastButOne = lastButOne.next;
+        }
+        lastButOne.next = null;
+        return head;
+    }
+
+    public static Node deleteKeyNode(Node head, int key) {
+        if (head == null) {
+            System.out.println("List is empty");
+            return null;
+        }
+
+        if (head.data == key)
+            return head.next;
+
+        Node prevNode = head;
+        Node keyNode = head.next;
+
+        while (keyNode != null) {
+            if (keyNode.data == key)
+                break;
+
+            prevNode = keyNode;
+            keyNode = keyNode.next;
+            if (keyNode != null && keyNode.data == key) {
+                prevNode.next = keyNode.next;
+            }
+
+        }
+        return head;
+
+    }
+
 }
