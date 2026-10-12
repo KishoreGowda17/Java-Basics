@@ -2,6 +2,8 @@ package sorting;
 
 public class CompareElements {
     public static void compareElements(int nums[]) {
+
+        
         if (nums == null || nums.length == 0)
             return;
         if (nums.length == 1)
@@ -23,6 +25,7 @@ public class CompareElements {
 
     public static void main(String[] args) {
         int array[] = {10,20,30,40};
+        int copy[] = array;
 
         compareElements(array);
     }
