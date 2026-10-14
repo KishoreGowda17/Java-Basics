@@ -3,9 +3,9 @@ package ArrayPractice.IntegerArrayPractice;
 public class HotterDays {
     public static int findHotterDays(int arr[]) {
         int count = 0;
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 1; i < arr.length; i++) {
 
-            if (arr[i] > arr[i + 1]) {
+            if (arr[i] > arr[i - 1]) {
                 count++;
             }
 
