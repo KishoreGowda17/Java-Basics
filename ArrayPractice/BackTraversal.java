@@ -1,5 +1,7 @@
 package ArrayPractice;
 
+import java.util.*;
+
 public class BackTraversal {
 
     static int countEven(int nums[]) {
@@ -59,12 +61,29 @@ public class BackTraversal {
         return result;
     }
 
+    static int[] reversecopyarray(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            System.out.println("Array is Empty");
+            return nums;
+        }
+
+        int res[] = new int[nums.length];
+        int index = 0;
+        for (int i = nums.length - 1; i > -1; i--) {
+            res[index] = nums[i];
+            index++;
+        }
+        return res;
+    }
+
     public static void main(String[] args) {
         // System.out.println(countEven(new int[] { 1, 4, 5, 6, 12, 45, 64, 22 }));
         // System.out.println(firstNegativeFromRight(new int[] { 1, 4, 5, 6, 12, 45, 64,
         // -10 }));
         // System.out.println(lastPositiveNumber(new int[] { 1, 4, 5, 6, 12, 45, 64, -10
         // }));
-        System.out.println(printelementsgreaterthanelemnt((new int[] { 1, 4, 5, 6, 12, 45, }), 4));
+        // System.out.println(printelementsgreaterthanelemnt((new int[] { 1, 4, 5, 6,
+        // 12, 45, }), 4 ));
+        System.out.println(Arrays.toString(reversecopyarray(new int[] { 10, 20, 30, 40, 50 })));
     }
 }
