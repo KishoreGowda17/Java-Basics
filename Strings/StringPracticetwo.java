@@ -1,4 +1,4 @@
-package Strings;
+// package Strings;
 
 public class StringPracticetwo {
     public static void main(String[] args) {
@@ -61,10 +61,5 @@ public class StringPracticetwo {
         //     System.out.println("Two middle : " + temp_[temp_.length / 2 - 1] + temp_[temp_.length / 2]);
         // }
 
-        String nam = "Java";
-
-        if(nam.length() % 2 == 1 ){
-            System.out.println("Middle : "+name.charAt());
-        }
     }
 }
